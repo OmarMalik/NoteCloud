@@ -8,6 +8,17 @@ class get_db extends CI_Model
 		return $query->result();
 	}
 
+	function insertNewNote()
+	{
+		$note = $_POST['note'];
+		$author = "omar";
+		$data = array(
+			"author" => $author,
+			"note" => $note
+		);
+		$this->db->insert("Notes", $data);
+	}
+
 	function insert1($data)
 	{
 		$this->db->insert("Notes", $data);

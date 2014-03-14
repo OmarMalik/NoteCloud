@@ -11,21 +11,26 @@
 <div id="container">
 	<h1>Enter New Note</h1>
 	<div class="notes-container">
-		<form class="new-note">
-			<textarea>
+		<form class="new-note" action="<?php echo base_url(); ?>site/insertNewNote" method="post">
+			<textarea name="note">
 			</textarea>
 			<br>
 			<input type="submit" value="submit">
 		</form>
-		<br>
-		<br>
 		<?php
-			foreach ($results as $row) {
-				echo "<div class=\"row\">";
-				echo $row->note;
-				echo " <div class=\"date\">" . $row->date . "</div>";
-				echo "</div>";
-			}
+		$toPrint = array();
+		foreach ($results as $row) 
+		{
+			$html =  "<div class=\"row\">";
+			$html .=  $row->note;
+			$html .= " <div class=\"date\">" . $row->date . "</div>";
+			$html .= "</div>";
+			array_push($toPrint, $html); 
+		}
+		for($i = count($toPrint) - 1; $i >= 0; $i--)
+		{
+			echo $toPrint[$i];
+		}
 		?>
 	</div>
 </div>

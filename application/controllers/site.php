@@ -16,6 +16,13 @@ class Site extends CI_Controller
 		$this->load->view("view_notes", $data);
 	}
 
+	public function insertNewNote()
+	{
+		$this->load->model("get_db");
+		$this->get_db->insertNewNote();
+		$this->notes();
+	}
+
 	public function getValues()
 	{
 		$this->load->model("get_db");
