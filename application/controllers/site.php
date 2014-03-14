@@ -15,4 +15,20 @@ class Site extends CI_Controller
 	
 		$this->load->view("view_db", $data);
 	}
+
+	public function insertValues()
+	{
+		$this->load->model("get_db");
+		$newRow = array(
+			array(
+				"author" => "batch1",
+				"note" => "insert test batch"
+			),
+			array(
+				"author" => "batch2",
+				"note" => "insert test batch2"
+			)
+		);
+		$this->get_db->insert2($newRow);
+	}
 }

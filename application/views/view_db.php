@@ -13,7 +13,12 @@
 		foreach( $results as $row)
 		{
 			echo $row->id;
+			echo "<br>";
 			echo $row->author;
+			echo "<br>";
+			echo $row->note;
+			echo "<br>";
+
 		}
 
 	?>
