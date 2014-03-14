@@ -11,11 +11,12 @@
 <div id="container">
 	<h1>Enter New Note</h1>
 	<div class="notes-container">
-		<form class="new-note" action="<?php echo base_url(); ?>site/insertNewNote" method="post">
+		<form class="new-note" action="<?php echo base_url(); ?>site/notes" method="post">
 			<textarea name="note">
 			</textarea>
 			<br>
 			<input type="submit" value="submit">
+			<input type="hidden" name="insert" value="yes">
 		</form>
 		<?php
 		$toPrint = array();

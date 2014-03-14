@@ -41,6 +41,8 @@
 		{
 			display: inline-block;
 		}
+
+
 	</style>
 </head>
 <body>
@@ -57,7 +59,7 @@
 		<br>
 		<input type="submit" value="submit">
 	</form>
-	<a class="view-notes" href="site/notes">View Notes</a>
+	<a class="view-notes" href="<?php echo base_url(); ?>site/notes">View Notes</a>
 </div>
 
 </body>
