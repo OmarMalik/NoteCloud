@@ -18,4 +18,24 @@ class get_db extends CI_Model
 		$this->db->insert_batch("Notes", $data);
 	}
 
+	function update1($data)
+	{
+		$this->db->update("Notes", $data, "id = 2");
+	}
+
+	function update2($data)
+	{
+		$this->db->update_batch("Notes", $data, "id");
+	}
+
+	function delete1($data)
+	{
+		$this->db->delete("Notes", $data);
+
+	}
+
+	function empty($data)
+	{
+		$this->db->empty($data);
+	}
 }

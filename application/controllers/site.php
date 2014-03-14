@@ -31,4 +31,32 @@ class Site extends CI_Controller
 		);
 		$this->get_db->insert2($newRow);
 	}
+
+	public function updateValues()
+	{
+		$this->load->model("get_db");
+		$newRow = array(
+			array(
+				"id" => "3",
+				"author" => "omar",
+				"note" => "updated"
+			),
+			array(
+				"id" => "4",
+				"author" => "Bill Gates"
+			)
+		);	
+
+		$this->get_db->update2($newRow);
+	}
+
+	public function deleteValues()
+	{
+		$this->load->model("get_db");
+		$oldRow = array(
+			"id" => "6"
+		);	
+
+		$this->get_db->delete1($oldRow);
+	}
 }
