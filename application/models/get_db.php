@@ -34,8 +34,8 @@ class get_db extends CI_Model
 
 	}
 
-	function empty($data)
+	/*function empty($data)
 	{
 		$this->db->empty($data);
-	}
+	}*/
 }

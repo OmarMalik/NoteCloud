@@ -4,7 +4,16 @@ class Site extends CI_Controller
 {
 	public function index()
 	{
+
 		$this->load->view("view_home");
+	}
+
+	public function notes()
+	{
+		$this->load->model("get_db");
+		$data['results'] = $this->get_db->getAll();
+
+		$this->load->view("view_notes", $data);
 	}
 
 	public function getValues()
